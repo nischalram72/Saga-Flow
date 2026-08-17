@@ -1,7 +1,7 @@
 # This script picks 3 files that haven't been pushed to GitHub yet, commits them, and pushes them.
 
 # 1. Get the status of files in the git repository
-$gitStatus = git status --porcelain
+$gitStatus = git status --porcelain -uall
 
 # 2. Check if there is anything left to push
 if (-not $gitStatus) {
