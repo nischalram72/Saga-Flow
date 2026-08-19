@@ -9,10 +9,10 @@ if (-not $gitStatus) {
     exit
 }
 
-# 3. Get the first 3 files from the list
-$filesToPush = $gitStatus | Select-Object -First 3
+# 3. Get the first 1 file from the list
+$filesToPush = $gitStatus | Select-Object -First 1
 
-Write-Host "Adding the following 3 files for today's contribution:" -ForegroundColor Cyan
+Write-Host "Adding the following 1 file for today's contribution:" -ForegroundColor Cyan
 foreach ($line in $filesToPush) {
     # Extract the file path (ignoring the first 3 characters which are status codes like '?? ' or ' M ')
     $filePath = $line.Substring(3).Trim()
