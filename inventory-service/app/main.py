@@ -62,12 +62,16 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         content={"error": "Validation Error", "details": sanitized_errors}
     )
 
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
 from app.models.inventory import Inventory
 from app.schemas.inventory import InventoryResponse
+# pyrefly: ignore [missing-import]
 from sqlalchemy.future import select
 from app.db.database import get_db
+# pyrefly: ignore [missing-import]
 from fastapi import Depends
+# pyrefly: ignore [missing-import]
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import List
 
@@ -83,7 +87,7 @@ app.include_router(inventory.router)
 
 @app.get("/products", response_model=List[InventoryResponse])
 async def list_products(db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Inventory).order_by(Inventory.product_id))
+    result = await db.execute(select(Inventory))
     return result.scalars().all()
 
 @app.get("/health")
