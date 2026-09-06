@@ -1,5 +1,7 @@
 import asyncio
+# pyrefly: ignore [missing-import]
 from sqlalchemy.future import select
+# pyrefly: ignore [missing-import]
 from sqlalchemy import update
 from app.db.database import AsyncSessionLocal
 from app.models.inventory import Inventory
