@@ -1,4 +1,5 @@
 import asyncio
+# pyrefly: ignore [missing-import]
 from sqlalchemy import text
 from app.db.database import AsyncSessionLocal
 
