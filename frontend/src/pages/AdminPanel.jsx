@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export default function AdminPanel() {
-  const [activeTab, setActiveTab] = useState('orders'); // 'orders' or 'inventory'
-  
+  const [activeTab, setActiveTab] = useState('orders');
   const [sagas, setSagas] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
