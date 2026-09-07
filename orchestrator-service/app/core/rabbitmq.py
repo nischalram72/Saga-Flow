@@ -1,4 +1,5 @@
 import os
+# pyrefly: ignore [missing-import]
 import aio_pika
 import logging
 from dotenv import load_dotenv
