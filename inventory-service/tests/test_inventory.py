@@ -1,5 +1,7 @@
+# pyrefly: ignore [missing-import]
 import pytest
 from unittest.mock import AsyncMock, patch, MagicMock
+# pyrefly: ignore [missing-import]
 from fastapi import HTTPException
 from app.routes.inventory import reserve_inventory, release_inventory
 from app.schemas.inventory import ReserveRequest, ReleaseRequest, ReserveItem
