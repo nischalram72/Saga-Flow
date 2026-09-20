@@ -22,6 +22,7 @@ from app.core.rabbitmq import rabbitmq_client
 async def lifespan(app: FastAPI):
     from app.core.consumer import start_consumer
     from app.db.database import AsyncSessionLocal
+    # pyrefly: ignore [missing-import]
     from sqlalchemy.future import select
     from app.models.user import User, Role
     from app.core.security import get_password_hash
@@ -47,6 +48,7 @@ async def lifespan(app: FastAPI):
     yield
     await rabbitmq_client.close()
 
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Order Service", lifespan=lifespan)
